@@ -1,0 +1,210 @@
+/* Paleta de colores y estilos globales */
+:root {
+    --color-principal: #2e7d32; /* Verde ecológico */
+    --color-secundario: #81c784;
+    --color-fondo: #f9fbf9;
+    --color-texto: #333333;
+    --color-blanco: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+/* Menú de Navegación Responsivo */
+header {
+    background-color: var(--color-blanco);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-weight: bold;
+    color: var(--color-principal);
+    font-size: 1.3rem;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--color-texto);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover, .nav-menu a.active {
+    color: var(--color-principal);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 0.4rem;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-texto);
+    border-radius: 2px;
+}
+
+/* Contenedor Principal */
+main {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    min-height: 70vh;
+}
+
+h1, h2, h3 {
+    color: var(--color-principal);
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* Marquesina del Index */
+.marquesina-aviso {
+    background-color: #ffe6e6;
+    color: #c62828;
+    padding: 0.8rem;
+    font-weight: bold;
+    border-left: 5px solid #c62828;
+    margin-bottom: 1.5rem;
+}
+
+/* Tarjetas de Blog */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.blog-card {
+    background: var(--color-blanco);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+}
+
+.blog-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.blog-card-content {
+    padding: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+    padding: 0.6rem 1.2rem;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 1rem;
+}
+
+/* Formularios (Únete) */
+.form-grupo {
+    margin-bottom: 1.2rem;
+}
+
+.form-grupo label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-grupo input, .form-grupo select {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Calendario / Eventos */
+.tabla-eventos {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    background: var(--color-blanco);
+}
+
+.tabla-eventos th, .tabla-eventos td {
+    padding: 1rem;
+    border: 1px solid #e0e0e0;
+    text-align: left;
+}
+
+.tabla-eventos th {
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+}
+
+/* Footer */
+footer {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}
+
+/* Responsivo para móviles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: var(--color-blanco);
+        padding: 1rem;
+        box-shadow: 0 4px 5px rgba(0,0,0,0.1);
+    }
+    .nav-menu.active {
+        display: flex;
+    }
+}
